@@ -1,0 +1,25 @@
+spring:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3308/stock_example
+    username: root
+    password: 1234
+    hikari:
+      maximum-pool-size: 40 # 네임드락에서 예제 편의성을 위해 같은 데이터 소스를 사용하므로 넉넉하게 40 으로 설정
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
